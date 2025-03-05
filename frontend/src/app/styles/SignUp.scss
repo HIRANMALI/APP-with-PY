@@ -1,0 +1,102 @@
+$primary-color: #ff5722;
+$hover-color: #e64a19; // Improved hover effect to match the theme
+$link-color: #ff5722;
+$background-color: whitesmoke;
+$form-background: #fff;
+$border-color: #ddd;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $background-color;
+  padding: 20px; // Added padding to avoid screen cut-off on small screens
+
+  &__form {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px; // Increased padding for a more balanced look
+    background: $form-background;
+    box-shadow: $box-shadow;
+    border-radius: 10px; // Softer corners for a modern look
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &__field {
+    margin-bottom: 15px;
+  }
+
+  &__label {
+    display: block;
+    font-weight: 600; // Slightly increased font weight
+    margin-bottom: 5px;
+  }
+
+  &__input,
+  &__select {
+    width: calc(100% - 20px); // Prevents input overflow
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background: #f9f9f9; // Light background for better visibility
+  }
+
+  &__input:focus,
+  &__select:focus {
+    border-color: $primary-color;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.3);
+  }
+
+  &__button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95rem;
+  }
+
+  &__link {
+    color: $link-color;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: none;
+    background: none;
+
+    &:hover {
+      color: darken($link-color, 10%);
+      text-decoration: none; // Remove default underline
+      border-bottom: 3px solid #ff5722; // Custom underline
+      padding-bottom: 3px;
+    }
+  }
+}

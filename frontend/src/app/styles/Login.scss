@@ -1,0 +1,67 @@
+$primary-color: #ff5722;
+$secondary-color: #eeeeee;
+$text-color: #333;
+$border-radius: 8px;
+
+.login-container {
+  max-width: 400px; // Set a fixed max width
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 50px auto; // Center the form
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-input {
+  width: 100%;
+  border-color: $primary-color;
+  background: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.login-button {
+  background-color: #ff5722;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #e64a19;
+  }
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 15px;
+  border: none;
+  background: none;
+
+  button {
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none; // Remove default underline
+      border-bottom: 3px solid #ff5722; // Custom underline
+      padding-bottom: 3px;
+    }
+  }
+}
