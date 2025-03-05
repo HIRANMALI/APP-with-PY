@@ -1,0 +1,125 @@
+// Variables
+$primary-color: #ff5722;
+$hover-color: #ff3c00;
+$text-color: #757575;
+$background-color: var(--clr-bg);
+
+.homepage {
+    background-color: $background-color;
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    color: whitesmoke;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0 0.5rem;
+    }
+
+    &__title {
+        font-size: 3rem;
+        text-align: center;
+        color: black;
+    }
+
+    &__description {
+        font-size: 1.25rem;
+        text-align: center;
+        color: $text-color;
+    }
+
+    &__button {
+        display: block;
+        margin: 20px auto;
+        background-color: $primary-color;
+        color: whitesmoke;
+        padding: 12px 24px;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $hover-color;
+        }
+    }
+}
+
+.map-container {
+    margin-left: 2rem;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    width: 550px;
+    height: 400px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &__image {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: 0 16px;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        color: black;
+    }
+
+    &__description {
+        color: $text-color;
+    }
+
+    &__actions {
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        padding: 8px 16px;
+        background-color: $primary-color;
+        color: whitesmoke;
+        border: none;
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $hover-color;
+        }
+    }
+}
+
+// Typography Styles
+.cinzel-decorative-bold {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.kanit-light{
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+  }

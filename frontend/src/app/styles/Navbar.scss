@@ -1,0 +1,128 @@
+/* FONT STYLING */
+$primary-color: #ff3c00;
+$secondary-color: #ff5722;
+$text-color: black;
+
+%font-style {
+  font-style: normal;
+}
+
+.cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  @extend %font-style;
+}
+
+.kanit-light {
+  font-family: "Kanit", serif;
+  font-weight: 300;
+  @extend %font-style;
+}
+
+.kanit-regular {
+  font-family: "Kanit", serif;
+  font-weight: 400;
+  @extend %font-style;
+}
+
+.kanit-medium {
+  font-family: "Kanit", serif;
+  font-weight: 500;
+  @extend %font-style;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: white;
+  width: 100%;
+  position: static;
+  top: 0;
+  z-index: 1000;
+
+  /* Navbar links */
+  &-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  /* Brand name */
+  &-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary-color;
+    padding: 0 2rem;
+  }
+
+  /* Auth buttons */
+  &-auth {
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem;
+  }
+}
+
+/* Links */
+.nav-link {
+  text-decoration: none;
+  color: $text-color;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 5px;
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $primary-color;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* Auth buttons */
+.auth-button {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: $secondary-color;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+
+    &-links,
+    &-auth {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+}
+
+.kanit-light{
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+}
+
+.kanit-medium{
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500; 
+}
