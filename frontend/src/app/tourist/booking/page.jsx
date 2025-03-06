@@ -33,8 +33,15 @@ const TouristBooking = () => {
   
       if (response.ok) {
         console.log("Redirecting to confirmation page...");
-        const query = new URLSearchParams(result).toString();
-        router.push(`/booking/confirmation?${query}`);
+  
+        // Ensure all form data is passed to the confirmation page
+        const query = new URLSearchParams({
+          ...formData, // Pass all form data
+          date: formData.date ? formData.date.toISOString().split("T")[0] : "", // Convert date to string
+          message: "Booking successful!",
+        }).toString();
+  
+        router.push(`/tourist/booking/confirmation?${query}`);
       } else {
         alert(result.message || "Booking failed, please try again.");
       }
@@ -42,6 +49,7 @@ const TouristBooking = () => {
       console.error("Fetch Error:", error);
     }
   };
+  
   
 
 

@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className={`navbar-brand ${cinzel.className}`}>Tour Guide</div>
+      <div className={`navbar-brand ${cinzel.className}`}>TouR guide</div>
       <div className="navbar-links">
         <Link href="/tourist" className="nav-link kanit-light">
           Home
@@ -41,6 +41,12 @@ function Navbar() {
           onClick={() => router.push("/auth/SignUp")}
         >
           Sign Up
+        </button>
+        <button
+          className="secondary_auth-button kanit-medium"
+          onClick={() => router.push("/auth/SignUp")}
+        >
+          Register as Guide
         </button>
       </div>
     </nav>
