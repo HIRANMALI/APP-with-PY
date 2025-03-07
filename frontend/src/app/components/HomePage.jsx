@@ -15,8 +15,9 @@ import Varanasi from "../assests/Varansai Ghats.jpg";
 import Goa from "../assests/Goa Beaches.jpg";
 // import backgroundImage from "../assests/";
 // import Navbar from "@/components/Navbar";
-import "@/app/styles/HomePage.scss";
+import "@/app/styles/HomePage.scss"; 
 import { Cinzel_Decorative, Kanit } from "next/font/google";
+import Section2 from "./Section2";
 
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });
 
@@ -42,11 +43,7 @@ const touristSpots = [
     description: "Spiritual heart of India along the Ganges.",
     image: Varanasi,
   },
-  {
-    name: "Goa Beaches",
-    description: "Golden sands and endless fun in Goa.",
-    image: Goa,
-  },
+ 
 ];
 
 export default function HomePage() {
@@ -55,17 +52,17 @@ export default function HomePage() {
 
   return (
     <div className="homepage">
-      <header>
+      <header className="background-image">
         <div className="container">
-          <h3 className="homepage__title kanit-light">
-            Discover Gujarat's Iconic Places
+          <h3 className="homepage__title cinzel-decorative-bold">
+            Discover gujarat's Iconic placeS
           </h3>
-          <p className="homepage__description kanit-light">
+          {/* <p className="homepage__description kanit-light">
             Discover India's wonders beyond the guidebooks. From the timeless
             beauty of the Taj Mahal to Kerala's serene backwaters, our certified
             guides bring each landmark to life. Book now for an unforgettable
             journey.
-          </p>
+          </p> */}
 
           <button
             className="homepage__button cinzel-decorative-bold"
@@ -73,58 +70,65 @@ export default function HomePage() {
           >
             Find a Guide
           </button>
-        </div>
+          </div>
       </header>
-
+      
       {/* Swiper Slider */}
-      <section
-        className="cards-container"
-        onMouseEnter={() => swiperRef.current?.autoplay.stop()}
-        onMouseLeave={() => swiperRef.current?.autoplay.start()}
-      >
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          slidesPerView={3}
-          spaceBetween={20}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 1500, disableOnInteraction: false }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="w-full"
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-        >
-          {touristSpots.map((spot, index) => (
-            <SwiperSlide key={index} className="p-4">
-              <div className="card bg-white rounded-lg shadow-lg overflow-hidden">
-                <Image
-                  src={spot.image}
-                  alt={spot.name}
-                  className="card__image w-full h-48 object-cover"
-                  width={300}
-                  height={200}
-                />
-                <div className="card__content p-4">
-                  <h5 className="card__title kanit-regular">{spot.name}</h5>
-                  <p className="card__description kanit-light">
-                    {spot.description}
-                  </p>
-                </div>
-                <div className="card__actions p-4">
-                  <button
-                    className="card__button kanit-regular bg-orange-500 text-white px-4 py-2 rounded"
-                    onClick={() => router.push("/tourist/booking")}
-                  >
-                    Book a Guide
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <div className="slider__container">
+          <h1 className="slider__title cinzel-decorative-bold">Places you should Visit....</h1>
+          <section
+            className="cards-container"
+            onMouseEnter={() => swiperRef.current?.autoplay.stop()}
+            onMouseLeave={() => swiperRef.current?.autoplay.start()}
+          >
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              slidesPerView={3}
+              spaceBetween={250}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              className="w-full"
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+            >
+              {touristSpots.map((spot, index) => (
+                <SwiperSlide key={index} className="p-4">
+                  <div className="card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <Image
+                      src={spot.image}
+                      alt={spot.name}
+                      className="card__image w-full h-48 object-cover"
+                      width={300}
+                      height={200}
+                    />
+                    <div className="card__content p-4">
+                      <h5 className="card__title kanit-regular">{spot.name}</h5>
+                      <p className="card__description kanit-light">
+                        {spot.description}
+                      </p>
+                    </div>
+                    <div className="card__actions p-4">
+                      <button
+                        className="card__button kanit-regular bg-orange-500 text-white px-4 py-2 rounded"
+                        onClick={() => router.push("/tourist/booking")}
+                      >
+                        Book a Guide
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </section>
+        </div>
+
+              <Section2 />
+      
+          
     </div>
   );
 }

@@ -1,0 +1,139 @@
+// Variables
+$primary-color: #ff5722;
+$hover-color: #ff3c00;
+$text-color: #757575;
+$background-color: var(--clr-bg);
+
+
+.why-book {
+  padding: 2rem;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: black;
+  }
+
+  &__comparison {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .why-book__column-no {
+      background: rgb(248, 63, 63);
+      padding: 1rem;
+      border-radius: 8px;
+      width: 45%;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      color: black;
+    } 
+    .why-book__column-yes {
+        background: rgb(155, 246, 20);
+        padding: 1rem;
+        border-radius: 8px;
+        width: 45%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        color: black;
+      } 
+  }
+
+  &__list-title{
+    color: orangered;
+    text-align:left;
+    letter-spacing: 0.1rem;
+    
+  }
+
+  &__list-cross{
+      list-style-type: none;
+      text-align: left;
+      color: #f1ae42;
+      letter-spacing: 0.1rem;
+    
+
+    &::before{
+        content: "❌";
+        margin: 2px 4px;
+        font-size: 1.2rem;
+    }
+  }
+
+  &__list-correct{
+    text-align: left;
+    list-style-type: none;
+    color: black;
+    letter-spacing: 0.1rem;
+
+    &::before{
+        content: "✅";
+        margin: 2px 4px;
+        font-size: 1.2rem;
+    }
+  }
+
+  &__sticky-notes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  &__note {
+    background: #ffeb3b;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg);
+  }
+
+  &__testimonials {
+    margin-top: 2rem;
+    font-style: italic;
+  }
+}
+
+// Font
+.cinzel-decorative-bold {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.kanit-light{
+    font-family: "Kanit", sans-serif;
+  }
+
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .why-book__comparison {
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-book__column {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-book__title {
+    font-size: 1.8rem;
+  }
+  .why-book__note {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-book {
+    padding: 1rem;
+  }
+  .why-book__column {
+    width: 100% !important;
+  }
+}
