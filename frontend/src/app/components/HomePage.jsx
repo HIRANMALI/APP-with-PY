@@ -53,7 +53,7 @@ export default function HomePage() {
   const router = useRouter();
   const swiperRef = useRef(null);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("city-tour");
+  const [filter, setFilter] = useState("destination");
 
   const handleSearch = () => {
     console.log("Search Query:", search);
