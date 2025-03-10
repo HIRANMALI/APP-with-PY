@@ -1,7 +1,8 @@
 "use client";
 
 // import { useState } from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -47,31 +48,50 @@ const touristSpots = [
  
 ];
 
+
 export default function HomePage() {
   const router = useRouter();
   const swiperRef = useRef(null);
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("city-tour");
+
+  const handleSearch = () => {
+    console.log("Search Query:", search);
+    console.log("Filter:", filter);
+  };
 
   return (
     <div className="homepage">
       <header className="background-image">
-        <div className="container">
-          <h3 className="homepage__title cinzel-decorative-bold">
-            Discover gujarat's Iconic placeS
-          </h3>
-          {/* <p className="homepage__description kanit-light">
-            Discover India's wonders beyond the guidebooks. From the timeless
-            beauty of the Taj Mahal to Kerala's serene backwaters, our certified
-            guides bring each landmark to life. Book now for an unforgettable
-            journey.
-          </p> */}
-
-          <button
-            className="homepage__button cinzel-decorative-bold"
-            onClick={() => router.push("/tourist/booking")}
-          >
-            Find a Guide
-          </button> 
+          <div className="search-bar">
+          <h1 className="search-bar__heading">
+            <span className="search-bar__heading--bold">FIND A GUIDE</span> TO LIVE THE HISTORY
+          </h1>
+          <div className="search-bar__container">
+            <FaSearch className="search-bar__icon" />
+            <input
+              type="text"
+              className="search-bar__input"
+              placeholder="Enter City or Destination"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <select
+              className="search-bar__filter"
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option value="city">City</option>
+              <option value="destination">Destination</option>
+            </select>
+            <button className="search-bar__button" onClick={handleSearch}>
+              FIND GUIDE
+            </button>
           </div>
+          <p className="search-bar__destinations">
+            <strong>Top Destinations:</strong> Somnath Temple, Dwarakadhish Temple, Ambaji, Sasan Gir National Park
+          </p>
+        </div>
       </header>
       
       {/* Swiper Slider */}
