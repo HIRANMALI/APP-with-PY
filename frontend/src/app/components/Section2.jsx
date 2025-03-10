@@ -10,7 +10,7 @@ export default function section2() {
       {/* Comparison Table */}
       <div className='why-book__comparison'>
         <div className='why-book__column-no'>
-          <h3 className="why-book__list-title kanit-light" style={{fontWeight:600,fontSize:30,}}>Self-Guided Tours</h3>
+          <h3 className="why-book__list-title kanit-light" style={{fontWeight:500,fontSize:30,}}>Self-Guided Tours</h3>
           <ul className="why-book__list-container">
             <li className="why-book__list-cross kanit-light" style={{fontWeight:500,fontSize:20}} >Limited knowledge of local culture</li>
             <li className="why-book__list-cross kanit-light" style={{fontWeight:500,fontSize:20}} >Navigation challenges</li>
@@ -20,7 +20,7 @@ export default function section2() {
           </ul>
         </div>
         <div className='why-book__column-yes'>
-          <h3 className="why-book__list-title kanit-light" style={{fontWeight:600,fontSize:30,}} >Guided Tours</h3>
+          <h3 className="why-book__list-title kanit-light" style={{fontWeight:500,fontSize:30,}} >Guided Tours</h3>
           <ul className="why-book__list-container">
             <li className="why-book__list-correct kanit-light" style={{fontWeight:500,fontSize:20}} >Expert insights & hidden spots</li>
             <li className="why-book__list-correct kanit-light" style={{fontWeight:500,fontSize:20}} >Seamless travel experience</li>
@@ -41,9 +41,9 @@ export default function section2() {
       
       {/* Testimonials */}
       <div className='why-book__testimonials'>
-        <h3>What Travelers Say</h3>
-        <p>⭐️⭐️⭐️⭐️⭐️ "Booking a guide made our trip stress-free and way more fun!"</p>
-        <p>⭐️⭐️⭐️⭐️⭐️ "Our guide showed us places we would have never found alone."</p>
+        <h3 className="why-book-testimonials__title" >What Travelers Say</h3>
+        <p className="why-book-testimonials__review" >⭐️⭐️⭐️⭐️⭐️ "Booking a guide made our trip stress-free and way more fun!"</p>
+        <p className="why-book-testimonials__review" >⭐️⭐️⭐️⭐️⭐️ "Our guide showed us places we would have never found alone."</p>
       </div>
     </section>
 )};

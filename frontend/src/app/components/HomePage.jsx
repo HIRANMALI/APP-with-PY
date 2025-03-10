@@ -18,6 +18,7 @@ import Goa from "../assests/Goa Beaches.jpg";
 import "@/app/styles/HomePage.scss"; 
 import { Cinzel_Decorative, Kanit } from "next/font/google";
 import Section2 from "./Section2";
+import Footer from "./footer";
 
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });
 
@@ -69,7 +70,7 @@ export default function HomePage() {
             onClick={() => router.push("/tourist/booking")}
           >
             Find a Guide
-          </button>
+          </button> 
           </div>
       </header>
       
@@ -127,6 +128,7 @@ export default function HomePage() {
         </div>
 
               <Section2 />
+              <Footer />
       
           
     </div>

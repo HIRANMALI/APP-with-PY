@@ -6,7 +6,7 @@ $background-color: var(--clr-bg);
 
 
 .why-book {
-  padding: 2rem;
+  margin-top: 2rem;
   text-align: center;
 
   &__title {
@@ -40,8 +40,8 @@ $background-color: var(--clr-bg);
   }
 
   &__list-title{
-    color: orangered;
-    text-align:left;
+    color: black;
+    text-align:center;
     letter-spacing: 0.1rem;
     
   }
@@ -49,14 +49,18 @@ $background-color: var(--clr-bg);
   &__list-cross{
       list-style-type: none;
       text-align: left;
-      color: #f1ae42;
+      color: black;
       letter-spacing: 0.1rem;
     
 
     &::before{
         content: "❌";
         margin: 2px 4px;
+        margin-right: 8px;
         font-size: 1.2rem;
+        background-color: pink ;
+        color: red;
+        border-radius: 4px;
     }
   }
 
@@ -79,6 +83,7 @@ $background-color: var(--clr-bg);
     gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    color: black;
   }
 
   &__note {
@@ -95,7 +100,20 @@ $background-color: var(--clr-bg);
     margin-top: 2rem;
     font-style: italic;
   }
+  
+  &-testimonials__title{
+    color: black;
+    font-size: 1.8rem;
+  }
+
+  &-testimonials__review{
+    color: black;
+    font-size: 1.2rem;
+
+  }
 }
+
+
 
 // Font
 .cinzel-decorative-bold {
