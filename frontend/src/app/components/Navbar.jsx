@@ -17,9 +17,6 @@ function Navbar() {
     <nav className="navbar">
       <div className={`navbar-brand ${cinzel.className}`}>GuidZo</div>
       <div className="navbar-links">
-        <Link href="/" className="nav-link">
-          Pro Guide
-        </Link>
         <Link href="/tourist/local" className="nav-link">
           Local Guide
         </Link>
