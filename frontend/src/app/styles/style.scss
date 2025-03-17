@@ -1,0 +1,39 @@
+:root {
+    --font-Montserrat:'Montserrat', sans-serif;
+}
+
+$primary-clr: #ff5722;
+$hover-clr: #ff3c00;
+
+
+*{
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+html {
+   scroll-behavior: smooth;
+}
+  
+body {
+    font-family: var(--font-Montserrat);
+    background-color: #fef4ea ;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background:none;
+    cursor: pointer;
+}

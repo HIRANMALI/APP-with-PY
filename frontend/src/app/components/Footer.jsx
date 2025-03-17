@@ -9,10 +9,10 @@ export default function Footer() {
         {/* Navigation Links */}
         <ul className="footer__nav">
           <li className="footer__nav-item"><a href="/">Home</a></li>
-          <li className="footer__nav-item"><a href="/about">About</a></li>
-          <li className="footer__nav-item"><a href="/services">Services</a></li>
-          <li className="footer__nav-item"><a href="/contact">Contact</a></li>
-          <li className="footer__nav-item"><a href="/book-guide">Book a Guide</a></li>
+          <li className="footer__nav-item"><a href="/tourist/local">Local Guide</a></li>
+          <li className="footer__nav-item"><a href="/bookings">My Bookings</a></li>
+          <li className="footer__nav-item"><a href="/benefits">Benefits</a></li>
+          <li className="footer__nav-item"><a href="/about">About Us</a></li>
         </ul>
 
         {/* Social Media Links */}

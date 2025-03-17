@@ -9,42 +9,44 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import tajMahal from "../assests/Taj Mahal.jpg";
-import Jaipur from "../assests/Jaipur City Palace.jpg";
-import Kerala from "../assests/Kerala Blackwaters.jpg";
-import Varanasi from "../assests/Varansai Ghats.jpg";
-import Goa from "../assests/Goa Beaches.jpg";
 // import backgroundImage from "../assests/";
 // import Navbar from "@/components/Navbar";
 import "@/app/styles/HomePage.scss"; 
-import { Cinzel_Decorative, Kanit } from "next/font/google";
-import Section2 from "./Section2";
-import Footer from "./footer";
+import {  Kanit, Poppins, Poppins } from "next/font/google";
+import Footer from "./Footer";
+import GuideCards from "./GuideCards";
+
 
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });
+const poppins = Poppins({weight:["400","700"], subsets: ["latin"]})
 
 // Array of tourist spots
 const touristSpots = [
   {
-    name: "Taj Mahal",
-    description: "A stunning symbol of love in Agra.",
-    image: tajMahal,
+    name: "Dwarkadish Mandir",
+    description: "Dwarkadhish mandir is India's one of the most famous temple dedicated to Lord Krishna and situated in Devbhoomi Dwarka district.",
+    image: "/assets/dwarkadish mandir.jpg",
   },
   {
-    name: "Jaipur City Palace",
-    description: "A magnificent blend of Mughal and Rajasthani architecture.",
-    image: Jaipur,
+    name: "saputara",
+    description: "Saputara is a hill station located in Sahyadris or Western Ghats.",
+    image: "/assets/saputara.jpg",
   },
   {
-    name: "Kerala Backwaters",
-    description: "Experience the serene backwaters of Kerala.",
-    image: Kerala,
+    name: "Sasan gir national park",
+    description: "Gir National Park and Wildlife Sanctuary, also known as Sasan Gir, is a forest, national park, and wildlife sanctuary near Talala Gir in Gujarat, India.",
+    image: "/assets/sasan gir national park.jpg", 
   },
   {
-    name: "Varanasi Ghats",
-    description: "Spiritual heart of India along the Ganges.",
-    image: Varanasi,
+    name: "Somnath Mandir",
+    description: "Shree Somnath mandir is first among the twelve Aadi Jyotirlings of India.",
+    image: "/assets/Somanath mandir.jpg",
   },
+  {
+    name:"Ambaji",
+    description : "Ambaji mata mandir is one of the 51 Shakti Peethas. it is a major Shakti Peeth of India.",
+    image: "/assets/ambaji mandir.jpg"
+  }
  
 ];
 
@@ -65,26 +67,26 @@ export default function HomePage() {
       <header className="background-image">
           <div className="search-bar">
           <h1 className="search-bar__heading">
-            <span className="search-bar__heading--bold">FIND A GUIDE</span> TO LIVE THE HISTORY
+            <span className="search-bar__heading--bold">BOOK A GUIDE</span> TO LIVE THE HISTORY
           </h1>
           <div className="search-bar__container">
-            <FaSearch className="search-bar__icon" />
+            <FaSearch className="search-bar__icon"  />
             <input
               type="text"
-              className="search-bar__input"
-              placeholder="Enter City or Destination"
+              className={`search-bar__input ${poppins.className}`}
+              placeholder="Search Destination..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <select
-              className="search-bar__filter"
+            {/* <select
+              className={`search-bar__filter ${poppins.className}`}
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
             >
               <option value="city">City</option>
               <option value="destination">Destination</option>
-            </select>
-            <button className="search-bar__button" onClick={handleSearch}>
+            </select> */}
+            <button className={`search-bar__button ${poppins.className}`} onClick={handleSearch}>
               FIND GUIDE
             </button>
           </div>
@@ -146,11 +148,8 @@ export default function HomePage() {
             </Swiper>
           </section>
         </div>
-
-              <Section2 />
-              <Footer />
-      
-          
+              < GuideCards />
+              <Footer />   
     </div>
   );
 }
