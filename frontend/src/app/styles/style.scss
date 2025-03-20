@@ -4,6 +4,7 @@
 
 $primary-clr: #ff5722;
 $hover-clr: #ff3c00;
+$background-clr: #fef4ea ;
 
 
 *{
@@ -17,7 +18,7 @@ html {
   
 body {
     font-family: var(--font-Montserrat);
-    background-color: #fef4ea ;
+    background-color: $background-clr ;
 }
 
 img,

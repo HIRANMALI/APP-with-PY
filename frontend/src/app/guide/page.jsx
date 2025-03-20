@@ -1,3 +1,5 @@
+"use client";
+
 import NavbarGuide from "../components/NavbarGuide";
 
 export default function Guide() {

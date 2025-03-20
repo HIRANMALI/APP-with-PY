@@ -1,3 +1,5 @@
+"use client";
+
 import NavbarGuide from "@/app/components/NavbarGuide";
 
 export default function bookings() {

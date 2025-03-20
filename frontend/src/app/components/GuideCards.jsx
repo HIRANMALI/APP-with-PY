@@ -10,7 +10,7 @@ export default function GuideCards() {
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       rating: 3,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },
     {
       name: 'Lfm',
@@ -28,7 +28,7 @@ export default function GuideCards() {
       quote: 'Experience the city like a local',
       reviews: 30,
       rating: 4,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },
     {
       name: 'Rahul',
@@ -37,7 +37,7 @@ export default function GuideCards() {
       quote: 'Discover hidden gems with me',
       reviews: 10,
       rating: 4,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },
     {
       name: 'Yash',
@@ -46,7 +46,7 @@ export default function GuideCards() {
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       rating: 3,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },{
       name: 'Yash',
       location: 'Mumbai, India',
@@ -54,7 +54,7 @@ export default function GuideCards() {
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       rating: 3,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },{
       name: 'Yash',
       location: 'Mumbai, India',
@@ -62,7 +62,7 @@ export default function GuideCards() {
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       rating: 3,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },{
       name: 'Yash',
       location: 'Mumbai, India',
@@ -70,7 +70,7 @@ export default function GuideCards() {
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       rating: 3,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },
   ];
 
