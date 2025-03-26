@@ -19,7 +19,7 @@ export default function GuideCards() {
       quote: 'Manifest',
       reviews: 48,
       rating: 5,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/Ajay Devgan.jpg',
     },
     {
       name: 'Aditi',
