@@ -143,7 +143,7 @@ export default function HomePage() {
                       </button>
                     </div>
                   </div>
-                </SwiperSlide>
+                </SwiperSlide> 
               ))}
             </Swiper>
           </section>
