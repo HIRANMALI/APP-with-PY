@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookings',
     'frontend',
+    'tourist',
 ]
 
 MIDDLEWARE = [
@@ -83,8 +84,12 @@ WSGI_APPLICATION = 'TourGuide.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tourist',
+        'USER': 'postgres',
+        'PASSWORD': 'Dhruv@1144',
+        'HOST': 'localhost', 
+        'PORT': '5432',
     }
 }
 
