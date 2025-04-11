@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 
+
 def home_view(req):
     return HttpResponse("Hellow World !!")
 
@@ -25,5 +26,6 @@ urlpatterns = [
     path('', home_view, name='home'), 
     path("admin/", admin.site.urls),
     path("bookings/", include("bookings.urls")), 
+    path('auth/', include('account.urls'))
 ]
 

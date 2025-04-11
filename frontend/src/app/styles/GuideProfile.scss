@@ -1,0 +1,123 @@
+.guide-profile {
+    padding: 2rem;
+    font-family: sans-serif;
+    background-color: #fff4ed;
+  
+    &__header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      background-image: url('/assets/sasan gir national park.jpg');
+      background-size: cover;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+  
+    &__photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  
+    &__intro {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  
+    &__name {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  
+    &__location {
+      color: #777;
+    }
+  
+    &__quote {
+      font-style: italic;
+      color: #333;
+    }
+  
+    &__price {
+      background-color: #ff9900;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+  
+    &__content {
+      margin-top: 1rem;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  
+    &__section {
+      margin-bottom: 1.5rem;
+    }
+  
+    &__title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    &__text {
+      font-size: 1rem;
+      color: #444;
+    }
+  
+    &__activities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    &__activity {
+      background-color: #e6e6e6;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+  
+    &__contact {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    &__rating {
+      font-size: 1rem;
+      color: #f9b700;
+    }
+  
+    &__btn {
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+  
+      &:hover {
+        background-color: #005ecb;
+      }
+    }
+  }
+  

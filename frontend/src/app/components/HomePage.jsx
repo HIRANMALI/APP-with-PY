@@ -15,6 +15,7 @@ import "@/app/styles/HomePage.scss";
 import {  Kanit, Poppins, Poppins } from "next/font/google";
 import Footer from "./Footer";
 import GuideCards from "./GuideCards";
+import Navbar from "./Navbar";
 
 
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });

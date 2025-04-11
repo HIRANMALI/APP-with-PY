@@ -2,15 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import "../../styles/SignUp.scss"; // Import the SCSS file
+import Cookies from "js-cookie";
+import "../../styles/SignUp.scss";
 
 export default function Signup() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
+    name: "",
     password: "",
-    role: "tourist",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,20 +20,26 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+  
     try {
-      const response = await fetch("/api/auth/signup", {
+      const response = await fetch("http://127.0.0.1:8000/auth/signup/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",  // ✅ So browser stores the cookies
         body: JSON.stringify(formData),
       });
-
+  
       const data = await response.json();
-      if (!response.ok) throw new Error(data.message);
-
-      alert(data.message);
-      router.push("/login");
+      if (!response.ok) throw new Error(data.message || "Signup failed");
+  
+      router.push("/");  // Redirect after success
     } catch (error) {
       alert(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -39,10 +47,9 @@ export default function Signup() {
     <div className="signup">
       <form className="signup__form" onSubmit={handleSubmit}>
         <h2 className="signup__title">Sign Up</h2>
+
         <div className="signup__field">
-          <label htmlFor="email" className="signup__label">
-            Email
-          </label>
+          <label htmlFor="email" className="signup__label">Email</label>
           <input
             type="email"
             id="email"
@@ -55,9 +62,20 @@ export default function Signup() {
         </div>
 
         <div className="signup__field">
-          <label htmlFor="password" className="signup__label">
-            Password
-          </label>
+          <label htmlFor="name" className="signup__label">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="signup__input"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="signup__field">
+          <label htmlFor="password" className="signup__label">Password</label>
           <input
             type="password"
             id="password"
@@ -69,31 +87,16 @@ export default function Signup() {
           />
         </div>
 
-        <div className="signup__field">
-          <label htmlFor="role" className="signup__label">
-            Role
-          </label>
-          <select
-            id="role"
-            name="role"
-            className="signup__select"
-            value={formData.role}
-            onChange={handleChange}
-          >
-            <option value="tourist">Tourist</option>
-            <option value="guide">Guide</option>
-          </select>
-        </div>
-
-        <button type="submit" className="signup__button">
-          Sign Up
+        <button type="submit" className="signup__button" disabled={loading}>
+          {loading ? "Creating Account..." : "Sign Up"}
         </button>
 
         <p className="signup__text">
           Already have an account?{" "}
           <button
+            type="button"
             className="signup__link"
-            onClick={() => router.push("/auth/Login")}
+            onClick={() => router.push("/auth/login")}
           >
             Login
           </button>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Container, TextField, Button, Typography, Box } from "@mui/material";
 import "../../styles/Login.scss"; // Importing SCSS file
+import Cookies from "js-cookie";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -14,8 +15,12 @@ export default function LoginPage() {
 
   const handleLogin = async () => {
     const userData = { username: credentials.username, role: "tourist" };
-    localStorage.setItem("user", JSON.stringify(userData));
-    router.push(userData.role === "guide" ? "/guide" : "/home");
+  
+    // Set cookie (expires in 7 days, can be changed)
+    Cookies.set("user", JSON.stringify(userData), { expires: 7 });
+  
+    // Redirect based on role
+    router.push(userData.role === "guide" ? "/guide" : "/");
   };
 
   return (
