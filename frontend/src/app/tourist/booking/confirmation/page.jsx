@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/app/components/Navbar";
 import { useSearchParams } from "next/navigation";
 
 const BookingConfirmation = () => {
@@ -7,6 +8,10 @@ const BookingConfirmation = () => {
   const bookingDetails = Object.fromEntries(searchParams.entries());
 
   return (
+
+    <>
+    <Navbar />
+    <br />
     <div>
       <h1>Booking Confirmed!</h1>
       <p><strong>Message:</strong> {bookingDetails.message}</p>
@@ -16,6 +21,7 @@ const BookingConfirmation = () => {
       <p><strong>Tour Type:</strong> {bookingDetails.tourType || "Not provided"}</p>
       <p><strong>Language:</strong> {bookingDetails.language || "Not provided"}</p>
     </div>
+    </>
   );
 };
 

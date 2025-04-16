@@ -29,6 +29,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    role = models.CharField(max_length=50, default="tourist")  # 👈 default role
 
     objects = CustomUserManager()
 

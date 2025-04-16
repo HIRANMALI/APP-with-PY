@@ -5,7 +5,6 @@ import { useRouter, usePathname } from "next/navigation";
 import "../styles/Navbar.scss";
 import { Cinzel_Decorative, Kanit, Poppins } from "next/font/google";
 import { FaUserCircle } from "react-icons/fa";
-import { jwtDecode } from "jwt-decode";
 
 const cinzel = Cinzel_Decorative({ weight: "700", subsets: ["latin"] });
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });
@@ -17,72 +16,22 @@ function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchAccessToken(); // ⬅️ auto-refresh logic
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+      setIsAuthenticated(true);
+    }
   }, [pathname]);
 
-  useEffect(() => {
-    console.log("👀 Checking cookies in browser:", document.cookie);
-    console.log("DEBUG COOKIE:", document.cookie);
-  }, []);
-
-
-  const fetchAccessToken = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch("http://localhost:8000/auth/refresh/", {
-        method: "POST",
-        credentials: "include", // refresh token is stored in HttpOnly cookie
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({}),
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        const accessToken = data.access;
-
-        // ⬇️ Decode access token to get user info
-        const decoded = jwtDecode(accessToken);
-        setIsAuthenticated(true);
-        setUser({ name: decoded.username });
-        console.log("✅ Access token refreshed, user authenticated");
-      } else {
-        setIsAuthenticated(false);
-        setUser(null);
-        console.warn("⚠️ Not authenticated - refresh failed");
-      }
-    } catch (err) {
-      console.error("Auth refresh error:", err);
-      setIsAuthenticated(false);
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
+  const handleLogout = () => {
+    sessionStorage.removeItem("user");
+    setIsAuthenticated(false);
+    setUser(null);
+    setDropdownOpen(false);
+    router.push("/");
   };
-
-  const handleLogout = async () => {
-    try {
-      await fetch("http://localhost:8000/auth/logout/", {
-        method: "POST",
-        credentials: "include",
-      });
-    } catch (err) {
-      console.error("Logout error:", err);
-    } finally {
-      setIsAuthenticated(false);
-      setUser(null);
-      setDropdownOpen(false);
-      router.push("/");
-    }
-  };
-
-  if (loading) {
-    return <div className="navbar-loading">Loading...</div>;
-  }
 
   return (
     <nav className="navbar">

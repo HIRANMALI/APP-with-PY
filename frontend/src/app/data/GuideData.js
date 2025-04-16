@@ -6,7 +6,7 @@ const guidesData = [
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       stars: 4,
-      image: '/assets/Ajay Devgan.jpg',
+      image: '/assets/PFP.jpg',
     },
     {
       name: 'Vaibhav',
@@ -15,7 +15,7 @@ const guidesData = [
       quote: 'Manifest',
       reviews: 48,
       stars: 5,
-      image: '/assets/Random 1.jpg',
+      image: '/assets/PFP 2.png',
     },
     {
       name: 'Aashish',
@@ -24,7 +24,7 @@ const guidesData = [
       quote: 'Experience the city like a local',
       reviews: 30,
       stars: 5,
-      image: '/assets/Random 1.jpg',
+      image: '/assets/PFP.jpg',
     },
     {
       name: 'Ronak',
@@ -33,7 +33,7 @@ const guidesData = [
       quote: 'Discover hidden gems with me',
       reviews: 10,
       stars: 4,
-      image: '/assets/Random 3.jpg',
+      image: '/assets/PFP.jpg',
     },
     {
       name: 'Yash',
@@ -42,7 +42,7 @@ const guidesData = [
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       stars: 4,
-      image: '/assets/Ajay Devgan.jpg',
+      image: '/assets/PFP 2.png',
     },
     {
       name: 'Virat',
@@ -51,7 +51,7 @@ const guidesData = [
       quote: 'Merging local expertise with warm hospitality',
       reviews: 2,
       stars: 4,
-      image: '/assets/Me & Dhruv 2.jpg',
+      image: '/assets/PFP.jpg',
     },
   ];
   

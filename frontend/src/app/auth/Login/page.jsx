@@ -1,42 +1,75 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Container, TextField, Button, Typography, Box } from "@mui/material";
-import "../../styles/Login.scss"; // Importing SCSS file
-import Cookies from "js-cookie";
+import "../../styles/Login.scss";
 
 export default function LoginPage() {
   const router = useRouter();
   const [credentials, setCredentials] = useState({
-    username: "",
+    identifier: "", // Email only
     password: "",
   });
 
   const handleLogin = async () => {
-    const userData = { username: credentials.username, role: "tourist" };
-  
-    // Set cookie (expires in 7 days, can be changed)
-    Cookies.set("user", JSON.stringify(userData), { expires: 7 });
-  
-    // Redirect based on role
-    router.push(userData.role === "guide" ? "/guide" : "/");
+    try {
+      const response = await fetch("http://127.0.0.1:8000/auth/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", // only needed if server still sets cookies
+        body: JSON.stringify({
+          identifier: credentials.identifier,
+          password: credentials.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.message || "Login failed");
+
+      // Save user in sessionStorage (adjusted)
+      sessionStorage.setItem("user", JSON.stringify({ name: data.username, role: data.role }));
+
+      // Redirect based on role
+      router.push(data.role === "guide" ? "/guide" : "/");
+    } catch (error) {
+      alert(error.message);
+    }
   };
+
+  // Trigger login on Enter key press
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
+  };
+
+  useEffect(() => {
+    // Clear the sessionStorage on every login page reload to prevent old data showing
+    sessionStorage.removeItem("user");
+  }, []);
 
   return (
     <Container maxWidth="xs" className="login-container">
       <Typography variant="h4" align="center" className="login-title">
         Login
       </Typography>
-      <Box component="form" className="login-form">
+      <Box
+        component="form"
+        className="login-form"
+        onKeyPress={handleKeyPress} // Added key press listener for Enter
+      >
         <TextField
-          label="Username"
+          label="Email"
           fullWidth
           margin="normal"
           className="login-input"
-          value={credentials.username}
+          value={credentials.identifier}
           onChange={(e) =>
-            setCredentials({ ...credentials, username: e.target.value })
+            setCredentials({ ...credentials, identifier: e.target.value })
           }
         />
         <TextField

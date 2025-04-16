@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
 import "../../styles/SignUp.scss";
 
 export default function Signup() {
@@ -28,14 +27,17 @@ export default function Signup() {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",  // ✅ So browser stores the cookies
+        credentials: "include",  // Browser will store cookies set by the backend
         body: JSON.stringify(formData),
       });
   
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Signup failed");
+
+      sessionStorage.setItem("user", JSON.stringify({ name: data.username }));
   
-      router.push("/");  // Redirect after success
+      // Auto-login if backend sets auth cookies
+      router.push("/");  // Redirect to homepage
     } catch (error) {
       alert(error.message);
     } finally {
