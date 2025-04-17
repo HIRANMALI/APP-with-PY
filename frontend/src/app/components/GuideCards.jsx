@@ -9,18 +9,30 @@ export default function GuideCards() {
       <h1 className="guide-card__heading">Here we found the Guides for You...</h1>
       <div className="guide-cards">
         {guides.map((guide, index) => (
-          <Link href={`/guide/${guide.name.toLowerCase()}`} key={index} className="guide-card" style={{textDecoration:"none"}}> 
+          <Link 
+            href={`/guide/${guide.fullName.toLowerCase().replace(/\s+/g, '-')}`} 
+            key={index} 
+            className="guide-card" 
+            style={{ textDecoration: "none" }}
+          > 
             <div className="guide-card__image">
-              <Image src={guide.image} alt={guide.name} width={200} height={200} />
+              <Image 
+                src={guide.profilePicture} 
+                alt={guide.fullName} 
+                width={200} 
+                height={200} 
+              />
             </div>
             <div className="guide-card__content">
-              <h2 className="guide-card__name">{guide.name}</h2>
-              <p className="guide-card__location">{guide.location}</p>
-              <p className="guide-card__price">{guide.price}</p>
-              <p className="guide-card__quote">"{guide.quote}"</p>
-              <p className="guide-card__reviews">Reviews: <span>{guide.reviews}</span></p>
+              <h2 className="guide-card__name">{guide.fullName}</h2>
+              <p className="guide-card__location">{guide.city}</p>
+              <p className="guide-card__price">₹{guide.hourlyRate} / hour</p>
+              <p className="guide-card__quote">"{guide.motive}"</p>
+              {guide.toursCompleted && (
+                <p className="guide-card__reviews">Tours Completed: <span>{guide.toursCompleted}</span></p>
+              )}
               <div className="guide-card__rating">
-                {'★'.repeat(guide.rating)}{'☆'.repeat(5 - guide.rating)}
+                {'★'.repeat(Math.round(guide.rating))}{'☆'.repeat(5 - Math.round(guide.rating))}
               </div>
             </div>
           </Link>

@@ -1,17 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import "../styles/Navbar.scss";
 import { Cinzel_Decorative, Kanit, Poppins } from "next/font/google";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaCommentDots } from "react-icons/fa";
 
 const cinzel = Cinzel_Decorative({ weight: "700", subsets: ["latin"] });
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["300", "500"], subsets: ["latin"] });
 
 function Navbar() {
-  const router = useRouter();
   const pathname = usePathname();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -30,43 +29,62 @@ function Navbar() {
     setIsAuthenticated(false);
     setUser(null);
     setDropdownOpen(false);
-    router.push("/");
   };
 
   return (
     <nav className="navbar">
       <div className={`navbar-brand ${cinzel.className}`}>GuidZo</div>
       <div className="navbar-links">
-        <Link href="/" className="nav-link">Pro Guide</Link>
-        <Link href="/tourist/local" className="nav-link">Local Guide</Link>
-        <Link href="/bookings" className="nav-link">My Bookings</Link>
-        <Link href="/benefits" className="nav-link">Benefits</Link>
-        <Link href="/about" className="nav-link">About Us</Link>
+        <Link href="/" className="nav-link" prefetch>Pro Guide</Link>
+        <Link href="/tourist/local" className="nav-link" prefetch>Local Guide</Link>
+        <Link href="/bookings" className="nav-link" prefetch>My Bookings</Link>
+        <Link href="/benefits" className="nav-link" prefetch>Benefits</Link>
+        <Link href="/about" className="nav-link" prefetch>About Us</Link>
       </div>
 
       <div className="navbar-auth">
         {!isAuthenticated ? (
           <>
-            <button className="auth-button kanit-medium" onClick={() => router.push("/auth/Login")}>Login</button>
-            <button className="auth-button kanit-medium" onClick={() => router.push("/auth/SignUp")}>Sign Up</button>
-            <button className="secondary_auth-button kanit-medium" onClick={() => router.push("/guide")}>Switch to Guide</button>
+            <Link href="/auth/Login" className="auth-button kanit-medium"  prefetch>
+              Login
+            </Link>
+            <Link href="/auth/SignUp" className="auth-button kanit-medium"  prefetch>
+              Sign Up
+            </Link>
+            <Link href="/guide" className="secondary_auth-button kanit-medium" prefetch>
+              Switch to Guide
+            </Link>
           </>
         ) : (
-          <div className="profile-dropdown">
-            <FaUserCircle
-              size={32}
-              className="profile-icon"
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              style={{ color: "black" }}
-            />
-            {dropdownOpen && (
-              <div className="dropdown-menu">
-                <p className="user-name">{user?.name}</p>
-                <button onClick={() => { router.push("/guide"); setDropdownOpen(false); }}>Sign in as Pro Guide</button>
-                <button onClick={() => { router.push("/tourist/local"); setDropdownOpen(false); }}>Sign in as Local Guide</button>
-                <button onClick={handleLogout}>Log Out</button>
-              </div>
-            )}
+          <div className="navbar__icons">
+            <Link href="/chat" className="navbar__icon-link">
+              <FaCommentDots
+                size={28}
+                className="navbar__icon navbar__icon--chat"
+                style={{ color: "black" }}
+              />
+            </Link>
+
+            <div className="profile-dropdown">
+              <FaUserCircle
+                size={32}
+                className="profile-icon"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                style={{ color: "black" }}
+              />
+              {dropdownOpen && (
+                <div className="dropdown-menu">
+                  <p className="user-name">{user?.name}</p>
+                  <Link href="/guide" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
+                    Sign in as Pro Guide
+                  </Link>
+                  <Link href="/tourist/local" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
+                    Sign in as Local Guide
+                  </Link>
+                  <button onClick={handleLogout}>Log Out</button>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>

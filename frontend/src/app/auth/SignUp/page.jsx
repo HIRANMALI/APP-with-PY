@@ -98,7 +98,7 @@ export default function Signup() {
           <button
             type="button"
             className="signup__link"
-            onClick={() => router.push("/auth/login")}
+            onClick={() => router.push("/auth/Login")}
           >
             Login
           </button>

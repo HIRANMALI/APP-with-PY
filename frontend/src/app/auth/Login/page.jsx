@@ -1,106 +1,103 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Container, TextField, Button, Typography, Box } from "@mui/material";
-import "../../styles/Login.scss";
+import "../../styles/SignUp.scss"; 
 
-export default function LoginPage() {
+export default function Login() {
   const router = useRouter();
-  const [credentials, setCredentials] = useState({
-    identifier: "", // Email only
+  const [formData, setFormData] = useState({
+    email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = async () => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    if (!formData.email || !formData.password) {
+      alert("Email and password are required");
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch("http://127.0.0.1:8000/auth/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // only needed if server still sets cookies
-        body: JSON.stringify({
-          identifier: credentials.identifier,
-          password: credentials.password,
-        }),
+        credentials: "include",
+        body: JSON.stringify(formData), // Must match what backend expects
       });
 
       const data = await response.json();
 
       if (!response.ok) throw new Error(data.message || "Login failed");
 
-      // Save user in sessionStorage (adjusted)
-      sessionStorage.setItem("user", JSON.stringify({ name: data.username, role: data.role }));
+      sessionStorage.setItem("user", JSON.stringify({ email: formData.email }));
 
-      // Redirect based on role
-      router.push(data.role === "guide" ? "/guide" : "/");
+      router.push("/");
     } catch (error) {
       alert(error.message);
+    } finally {
+      setLoading(false);
     }
   };
-
-  // Trigger login on Enter key press
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleLogin();
-    }
-  };
-
-  useEffect(() => {
-    // Clear the sessionStorage on every login page reload to prevent old data showing
-    sessionStorage.removeItem("user");
-  }, []);
 
   return (
-    <Container maxWidth="xs" className="login-container">
-      <Typography variant="h4" align="center" className="login-title">
-        Login
-      </Typography>
-      <Box
-        component="form"
-        className="login-form"
-        onKeyPress={handleKeyPress} // Added key press listener for Enter
-      >
-        <TextField
-          label="Email"
-          fullWidth
-          margin="normal"
-          className="login-input"
-          value={credentials.identifier}
-          onChange={(e) =>
-            setCredentials({ ...credentials, identifier: e.target.value })
-          }
-        />
-        <TextField
-          label="Password"
-          type="password"
-          fullWidth
-          margin="normal"
-          className="login-input"
-          value={credentials.password}
-          onChange={(e) =>
-            setCredentials({ ...credentials, password: e.target.value })
-          }
-        />
-        <Button
-          variant="contained"
-          fullWidth
-          className="login-button"
-          onClick={handleLogin}
-        >
-          Login
-        </Button>
-      </Box>
-      <Typography variant="body2" align="center" className="signup-text">
-        Don't have an account?{" "}
-        <button
-          className="signup-text"
-          onClick={() => router.push("/auth/SignUp")}
-        >
-          Sign Up
+    <div className="signup">
+      <form className="signup__form" onSubmit={handleSubmit} autoComplete="off">
+        <h2 className="signup__title">Login</h2>
+
+        <div className="signup__field">
+          <label htmlFor="email" className="signup__label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="signup__input"
+            autoComplete="new-email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="signup__field">
+          <label htmlFor="password" className="signup__label">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            className="signup__input"
+            value={formData.password}
+            autoComplete="new-password"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <button type="submit" className="signup__button" disabled={loading}>
+          {loading ? "Logging In..." : "Login"}
         </button>
-      </Typography>
-    </Container>
+
+        <p className="signup__text">
+          Don’t have an account?{" "}
+          <button
+            type="button"
+            className="signup__link"
+            onClick={() => router.push("/auth/signup")}
+          >
+            Sign Up
+          </button>
+        </p>
+      </form>
+    </div>
   );
 }

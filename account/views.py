@@ -15,22 +15,20 @@ class SignupView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 class LoginView(APIView):
     def post(self, request):
-        email = request.data.get('identifier')
+        email = request.data.get('email')  # FIXED: changed from 'identifier' to 'email'
         password = request.data.get('password')
 
         if not email or not password:
             return Response({'message': 'Email and password are required'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Authenticate using email as username
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
             return Response({
                 'email': user.email,
-                'role': user.role  # or use 'guide' if hasattr(user, 'guideprofile') if dynamic
+                'role': user.role
             }, status=status.HTTP_200_OK)
         else:
             return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
