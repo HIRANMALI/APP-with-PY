@@ -1,7 +1,7 @@
 "use client";
 
 // import { useState } from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -58,19 +58,44 @@ export default function HomePage() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("destination");
 
-  const handleSearch = () => {
-    console.log("Search Query:", search);
-    console.log("Filter:", filter);
-  };
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const suggestions = ["Somnath Mandir", "Dwarkadhish Mandir", "Ambaji", "Sasangir national park"];
+  
+    const inputRef = useRef(null);
+    const wrapperRef = useRef(null);
+  
+    const handleSearch = () => {
+      console.log("Search Query:", search);
+    };
+  
+    const handleClickOutside = (e) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        setShowSuggestions(false);
+      }
+    };
+  
+    useEffect(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
 
-  return (
+    useEffect(() => {
+      console.log("showSuggestions:", showSuggestions);
+    }, [showSuggestions]);
+  
+    const handleSuggestionClick = (dest) => {
+      setSearch(dest);
+      setShowSuggestions(false);
+    };
+ 
+    return (
     <div className="homepage">
       <header className="background-image">
           <div className="search-bar">
           <h1 className="search-bar__heading">
             <span className="search-bar__heading--bold">BOOK A GUIDE</span> TO LIVE THE HISTORY
           </h1>
-          <div className="search-bar__container">
+          <div className="search-bar__container" ref={wrapperRef}>
             <FaSearch className="search-bar__icon"  />
             <input
               type="text"
@@ -78,18 +103,29 @@ export default function HomePage() {
               placeholder="Search Destination..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onFocus={() => {
+                console.log("Input focused");
+                setShowSuggestions(true);
+              }}
+              
+              ref={inputRef}
             />
-            {/* <select
-              className={`search-bar__filter ${poppins.className}`}
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-            >
-              <option value="city">City</option>
-              <option value="destination">Destination</option>
-            </select> */}
             <button className={`search-bar__button ${poppins.className}`} onClick={handleSearch}>
               FIND GUIDE
             </button>
+            {showSuggestions && (
+            <ul className="suggestions__dropdown">
+              {suggestions.map((dest) => (
+                <li
+                  key={dest}
+                  className="suggestions__item"
+                  onClick={() => handleSuggestionClick(dest)}
+                >
+                  {dest}
+                </li>
+              ))}
+            </ul>
+          )}
           </div>
           <p className="search-bar__destinations">
             <strong>Top Destinations:</strong> Somnath Temple, Dwarakadhish Temple, Ambaji, Sasan Gir National Park

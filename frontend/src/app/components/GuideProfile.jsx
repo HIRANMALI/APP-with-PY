@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import guidesData from '../data/GuideData'; // ✅ Importing mock data
+import guidesData from '../data/guideData'; // ✅ Importing mock data
 import '../styles/GuideProfile.scss';
 import Navbar from './Navbar';
 
