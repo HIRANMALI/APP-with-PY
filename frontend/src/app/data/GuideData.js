@@ -12,7 +12,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Ahmedabad"
   },
   {
@@ -29,7 +29,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.6,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Surat"
   },
   {
@@ -45,7 +45,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Somnath",
     "toursCompleted": 55
   },
@@ -62,7 +62,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Surat"
   },
   {
@@ -79,7 +79,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Surat"
   },
   {
@@ -96,7 +96,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Ahmedabad",
     "toursCompleted": 132
   },
@@ -113,7 +113,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Somnath"
   },
   {
@@ -129,7 +129,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Ahmedabad"
   },
   {
@@ -145,7 +145,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Ahmedabad",
     "toursCompleted": 162
   },
@@ -162,7 +162,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Ahmedabad"
   },
   {
@@ -178,7 +178,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Dwarka"
   },
   {
@@ -194,7 +194,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Surat",
     "toursCompleted": 167
   },
@@ -211,7 +211,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Somnath"
   },
   {
@@ -227,7 +227,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Ahmedabad"
   },
   {
@@ -243,7 +243,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 3.8,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Ahmedabad",
     "toursCompleted": 57
   },
@@ -261,7 +261,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Dwarka"
   },
   {
@@ -277,7 +277,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Somnath"
   },
   {
@@ -294,7 +294,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Ahmedabad",
     "toursCompleted": 52
   },
@@ -311,7 +311,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Ahmedabad"
   },
   {
@@ -327,7 +327,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Surat"
   },
   {
@@ -344,7 +344,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Surat",
     "toursCompleted": 20
   },
@@ -361,7 +361,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Ahmedabad"
   },
   {
@@ -378,7 +378,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Somnath"
   },
   {
@@ -394,7 +394,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 3.6,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Dwarka",
     "toursCompleted": 82
   },
@@ -411,7 +411,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Ahmedabad"
   },
   {
@@ -427,7 +427,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Surat"
   },
   {
@@ -443,7 +443,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Dwarka",
     "toursCompleted": 194
   },
@@ -460,7 +460,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.6,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Dwarka"
   },
   {
@@ -476,7 +476,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Dwarka"
   },
   {
@@ -492,7 +492,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Somnath",
     "toursCompleted": 65
   },
@@ -510,7 +510,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Ahmedabad"
   },
   {
@@ -526,7 +526,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Dwarka"
   },
   {
@@ -542,7 +542,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 5.0,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Somnath",
     "toursCompleted": 93
   },
@@ -559,7 +559,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Ahmedabad"
   },
   {
@@ -575,7 +575,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.6,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Ahmedabad"
   },
   {
@@ -592,7 +592,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Dwarka",
     "toursCompleted": 91
   },
@@ -609,7 +609,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Dwarka"
   },
   {
@@ -625,7 +625,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Ahmedabad"
   },
   {
@@ -641,7 +641,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Dwarka",
     "toursCompleted": 98
   },
@@ -658,7 +658,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Somnath"
   },
   {
@@ -674,7 +674,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Dwarka"
   },
   {
@@ -690,7 +690,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Somnath",
     "toursCompleted": 190
   },
@@ -707,7 +707,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Ahmedabad"
   },
   {
@@ -723,7 +723,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 3.6,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Ahmedabad"
   },
   {
@@ -739,7 +739,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Somnath",
     "toursCompleted": 34
   },
@@ -756,7 +756,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 3.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Somnath"
   },
   {
@@ -772,7 +772,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Surat"
   },
   {
@@ -788,7 +788,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Dwarka",
     "toursCompleted": 63
   },
@@ -806,7 +806,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.8,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Ahmedabad"
   },
   {
@@ -822,7 +822,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.6,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Surat"
   },
   {
@@ -838,7 +838,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Ahmedabad",
     "toursCompleted": 188
   },
@@ -855,7 +855,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.0,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Somnath"
   },
   {
@@ -871,7 +871,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Surat"
   },
   {
@@ -888,7 +888,7 @@ const guideData = [
       "English"
     ],
     "rating": 3.8,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Somnath",
     "toursCompleted": 84
   },
@@ -905,7 +905,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Somnath"
   },
   {
@@ -921,7 +921,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 3.5,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Surat"
   },
   {
@@ -937,7 +937,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Somnath",
     "toursCompleted": 126
   },
@@ -955,7 +955,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.0,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Surat"
   },
   {
@@ -971,7 +971,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/D Gukesh.jpeg",
     "city": "Surat"
   },
   {
@@ -987,7 +987,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Ahmedabad",
     "toursCompleted": 179
   },
@@ -1005,7 +1005,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vidit.jpeg",
     "city": "Dwarka"
   },
   {
@@ -1021,7 +1021,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Tania S.jpg",
     "city": "Ahmedabad"
   },
   {
@@ -1037,7 +1037,7 @@ const guideData = [
       "Hindi"
     ],
     "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Vantika.png",
     "city": "Somnath",
     "toursCompleted": 44
   },
@@ -1054,7 +1054,7 @@ const guideData = [
       "English"
     ],
     "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Magnus.png",
     "city": "Surat"
   },
   {
@@ -1070,585 +1070,9 @@ const guideData = [
       "Hindi"
     ],
     "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
+    "profilePicture": "/assets/Divya.jpg",
     "city": "Dwarka"
   },
-  {
-    "type": "pro",
-    "fullName": "Amit Patel",
-    "email": "amit.patel66@example.com",
-    "password": "guide123",
-    "age": 49,
-    "motive": "Interested in history",
-    "hourlyRate": 292,
-    "languages": [
-      "Gujarati",
-      "Hindi",
-      "English"
-    ],
-    "rating": 3.7,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad",
-    "toursCompleted": 70
-  },
-  {
-    "type": "local",
-    "fullName": "Neha Singh",
-    "email": "neha.singh67@example.com",
-    "password": "guide123",
-    "age": 34,
-    "motive": "Loves sharing local history",
-    "hourlyRate": 489,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka"
-  },
-  {
-    "type": "local",
-    "fullName": "Kavita Joshi",
-    "email": "kavita.joshi68@example.com",
-    "password": "guide123",
-    "age": 26,
-    "motive": "Likes storytelling",
-    "hourlyRate": 373,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad"
-  },
-  {
-    "type": "pro",
-    "fullName": "Amit Kapoor",
-    "email": "amit.kapoor69@example.com",
-    "password": "guide123",
-    "age": 32,
-    "motive": "Guiding is her passion",
-    "hourlyRate": 236,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath",
-    "toursCompleted": 161
-  },
-  {
-    "type": "local",
-    "fullName": "Vikas Mehta",
-    "email": "vikas.mehta70@example.com",
-    "password": "guide123",
-    "age": 27,
-    "motive": "Wants to become a top guide",
-    "hourlyRate": 372,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad"
-  },
-  {
-    "type": "local",
-    "fullName": "Amit Joshi",
-    "email": "amit.joshi71@example.com",
-    "password": "guide123",
-    "age": 57,
-    "motive": "Guiding is her passion",
-    "hourlyRate": 481,
-    "languages": [
-      "Gujarati",
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka"
-  },
-  {
-    "type": "pro",
-    "fullName": "Meena Patel",
-    "email": "meena.patel72@example.com",
-    "password": "guide123",
-    "age": 45,
-    "motive": "Enjoys meeting new people",
-    "hourlyRate": 314,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath",
-    "toursCompleted": 197
-  },
-  {
-    "type": "local",
-    "fullName": "Rajesh Trivedi",
-    "email": "rajesh.trivedi73@example.com",
-    "password": "guide123",
-    "age": 44,
-    "motive": "Likes storytelling",
-    "hourlyRate": 242,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.4,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  },
-  {
-    "type": "local",
-    "fullName": "Meena Singh",
-    "email": "meena.singh74@example.com",
-    "password": "guide123",
-    "age": 60,
-    "motive": "Likes storytelling",
-    "hourlyRate": 181,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 5.0,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "pro",
-    "fullName": "Suresh Desai",
-    "email": "suresh.desai75@example.com",
-    "password": "guide123",
-    "age": 58,
-    "motive": "Guiding is her passion",
-    "hourlyRate": 375,
-    "languages": [
-      "Gujarati",
-      "English"
-    ],
-    "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka",
-    "toursCompleted": 102
-  },
-  {
-    "type": "local",
-    "fullName": "Anil Bhatt",
-    "email": "anil.bhatt76@example.com",
-    "password": "guide123",
-    "age": 25,
-    "motive": "Wants to promote tourism",
-    "hourlyRate": 170,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "local",
-    "fullName": "Sneha Trivedi",
-    "email": "sneha.trivedi77@example.com",
-    "password": "guide123",
-    "age": 59,
-    "motive": "Proud of cultural heritage",
-    "hourlyRate": 273,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  },
-  {
-    "type": "pro",
-    "fullName": "Suresh Bhatt",
-    "email": "suresh.bhatt78@example.com",
-    "password": "guide123",
-    "age": 50,
-    "motive": "Enjoys meeting new people",
-    "hourlyRate": 222,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 3.7,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat",
-    "toursCompleted": 177
-  },
-  {
-    "type": "local",
-    "fullName": "Meena Rao",
-    "email": "meena.rao79@example.com",
-    "password": "guide123",
-    "age": 27,
-    "motive": "Loves sharing local history",
-    "hourlyRate": 167,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  },
-  {
-    "type": "local",
-    "fullName": "Pooja Joshi",
-    "email": "pooja.joshi80@example.com",
-    "password": "guide123",
-    "age": 57,
-    "motive": "Likes storytelling",
-    "hourlyRate": 258,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "pro",
-    "fullName": "Rajesh Desai",
-    "email": "rajesh.desai81@example.com",
-    "password": "guide123",
-    "age": 52,
-    "motive": "Loves sharing local history",
-    "hourlyRate": 426,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka",
-    "toursCompleted": 89
-  },
-  {
-    "type": "local",
-    "fullName": "Pooja Trivedi",
-    "email": "pooja.trivedi82@example.com",
-    "password": "guide123",
-    "age": 30,
-    "motive": "Guiding is her passion",
-    "hourlyRate": 316,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.0,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  },
-  {
-    "type": "local",
-    "fullName": "Vikas Kapoor",
-    "email": "vikas.kapoor83@example.com",
-    "password": "guide123",
-    "age": 57,
-    "motive": "Likes storytelling",
-    "hourlyRate": 163,
-    "languages": [
-      "Gujarati",
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "pro",
-    "fullName": "Neha Patel",
-    "email": "neha.patel84@example.com",
-    "password": "guide123",
-    "age": 24,
-    "motive": "Loves sharing local history",
-    "hourlyRate": 447,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 3.8,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka",
-    "toursCompleted": 196
-  },
-  {
-    "type": "local",
-    "fullName": "Pooja Rao",
-    "email": "pooja.rao85@example.com",
-    "password": "guide123",
-    "age": 47,
-    "motive": "Wants to become a top guide",
-    "hourlyRate": 493,
-    "languages": [
-      "Gujarati",
-      "English"
-    ],
-    "rating": 4.5,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "local",
-    "fullName": "Neha Patel",
-    "email": "neha.patel86@example.com",
-    "password": "guide123",
-    "age": 43,
-    "motive": "Likes storytelling",
-    "hourlyRate": 222,
-    "languages": [
-      "Gujarati",
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  },
-  {
-    "type": "pro",
-    "fullName": "Suresh Patel",
-    "email": "suresh.patel87@example.com",
-    "password": "guide123",
-    "age": 39,
-    "motive": "Proud of cultural heritage",
-    "hourlyRate": 443,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 3.6,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad",
-    "toursCompleted": 196
-  },
-  {
-    "type": "local",
-    "fullName": "Kavita Bhatt",
-    "email": "kavita.bhatt88@example.com",
-    "password": "guide123",
-    "age": 34,
-    "motive": "Guiding is her passion",
-    "hourlyRate": 227,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "local",
-    "fullName": "Amit Mehta",
-    "email": "amit.mehta89@example.com",
-    "password": "guide123",
-    "age": 41,
-    "motive": "Loves sharing local history",
-    "hourlyRate": 324,
-    "languages": [
-      "Hindi",
-      "English"
-    ],
-    "rating": 4.0,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Somnath"
-  },
-  {
-    "type": "pro",
-    "fullName": "Meena Trivedi",
-    "email": "meena.trivedi90@example.com",
-    "password": "guide123",
-    "age": 37,
-    "motive": "Interested in history",
-    "hourlyRate": 330,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 4.2,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad",
-    "toursCompleted": 111
-  },
-  {
-    "type": "local",
-    "fullName": "Rajesh Shah",
-    "email": "rajesh.shah91@example.com",
-    "password": "guide123",
-    "age": 39,
-    "motive": "Proud of cultural heritage",
-    "hourlyRate": 341,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 4.8,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  },
-  {
-    "type": "local",
-    "fullName": "Neha Rao",
-    "email": "neha.rao92@example.com",
-    "password": "guide123",
-    "age": 55,
-    "motive": "Interested in history",
-    "hourlyRate": 327,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 4.7,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka"
-  },
-  {
-    "type": "pro",
-    "fullName": "Suresh Mehta",
-    "email": "suresh.mehta93@example.com",
-    "password": "guide123",
-    "age": 33,
-    "motive": "Likes storytelling",
-    "hourlyRate": 427,
-    "languages": [
-      "English",
-      "Hindi"
-    ],
-    "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat",
-    "toursCompleted": 148
-  },
-  {
-    "type": "local",
-    "fullName": "Sneha Patel",
-    "email": "sneha.patel94@example.com",
-    "password": "guide123",
-    "age": 59,
-    "motive": "Interested in history",
-    "hourlyRate": 383,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 3.9,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka"
-  },
-  {
-    "type": "local",
-    "fullName": "Vikas Shah",
-    "email": "vikas.shah95@example.com",
-    "password": "guide123",
-    "age": 59,
-    "motive": "Enjoys meeting new people",
-    "hourlyRate": 466,
-    "languages": [
-      "Gujarati",
-      "English"
-    ],
-    "rating": 3.8,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad"
-  },
-  {
-    "type": "pro",
-    "fullName": "Amit Trivedi",
-    "email": "amit.trivedi96@example.com",
-    "password": "guide123",
-    "age": 29,
-    "motive": "Enjoys meeting new people",
-    "hourlyRate": 429,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 3.5,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad",
-    "toursCompleted": 41
-  },
-  {
-    "type": "local",
-    "fullName": "Anil Desai",
-    "email": "anil.desai97@example.com",
-    "password": "guide123",
-    "age": 29,
-    "motive": "Enjoys meeting new people",
-    "hourlyRate": 319,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 4.3,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Dwarka"
-  },
-  {
-    "type": "local",
-    "fullName": "Vikas Bhatt",
-    "email": "vikas.bhatt98@example.com",
-    "password": "guide123",
-    "age": 39,
-    "motive": "Proud of cultural heritage",
-    "hourlyRate": 155,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 3.5,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad"
-  },
-  {
-    "type": "pro",
-    "fullName": "Anil Desai",
-    "email": "anil.desai99@example.com",
-    "password": "guide123",
-    "age": 21,
-    "motive": "Proud of cultural heritage",
-    "hourlyRate": 306,
-    "languages": [
-      "Gujarati",
-      "English"
-    ],
-    "rating": 4.1,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Ahmedabad",
-    "toursCompleted": 91
-  },
-  {
-    "type": "local",
-    "fullName": "Meena Rao",
-    "email": "meena.rao100@example.com",
-    "password": "guide123",
-    "age": 22,
-    "motive": "Wants to become a top guide",
-    "hourlyRate": 251,
-    "languages": [
-      "Gujarati",
-      "Hindi"
-    ],
-    "rating": 3.6,
-    "profilePicture": "/assets/PFP.jpg",
-    "city": "Surat"
-  }
-];
+]
 
 export default guideData;
