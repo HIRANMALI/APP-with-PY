@@ -1,0 +1,42 @@
+.booking-confirmation {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+    &__title {
+      text-align: center;
+      font-size: 2rem;
+      color: #27ae60;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+  
+    &__details {
+      background-color: #ffffff;
+      border: 1px solid #ecf0f1;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+  
+    &__label {
+      font-weight: 600;
+    }
+  
+    &__value {
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+  

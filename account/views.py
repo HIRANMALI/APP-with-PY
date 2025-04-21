@@ -11,7 +11,7 @@ class SignupView(APIView):
         serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-            return Response({"message": "Signup successful", "role": user.role}, status=status.HTTP_201_CREATED)
+            return Response({"message": "Signup successful", "role": user.role, "userId": user.id,}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -28,7 +28,8 @@ class LoginView(APIView):
         if user is not None:
             return Response({
                 'email': user.email,
-                'role': user.role
+                'role': user.role,
+                "userId": user.id,
             }, status=status.HTTP_200_OK)
         else:
             return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)

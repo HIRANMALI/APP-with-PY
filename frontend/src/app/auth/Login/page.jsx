@@ -41,6 +41,7 @@ export default function Login() {
       if (!response.ok) throw new Error(data.message || "Login failed");
 
       sessionStorage.setItem("user", JSON.stringify({ email: formData.email }));
+      sessionStorage.setItem("userId", data.userId); // Or response.user.id
 
       router.push("/");
     } catch (error) {
@@ -92,7 +93,7 @@ export default function Login() {
           <button
             type="button"
             className="signup__link"
-            onClick={() => router.push("/auth/signup")}
+            onClick={() => router.push("/auth/SignUp")}
           >
             Sign Up
           </button>

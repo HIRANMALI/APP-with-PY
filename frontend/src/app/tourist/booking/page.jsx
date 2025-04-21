@@ -54,46 +54,75 @@ const TouristBooking = () => {
 
   const handleBooking = async () => {
     if (!isAuthenticated) {
-      // Show the login/signup popup if not authenticated
       setShowLoginPopup(true);
       return;
     }
-
+  
+    const { timeSlot, tourType, location, language, date } = formData;
+  
+    // Improved validation
+    if (
+      !timeSlot?.trim() ||
+      !tourType?.trim() ||
+      !location?.trim() ||
+      !language?.trim() ||
+      !date || isNaN(new Date(date).getTime())  // Ensure date is valid
+    ) {
+      alert("Please fill out all fields properly before confirming the booking.");
+      return;  // Stop execution if validation fails
+    }
+  
     console.log("Confirm button clicked!");
     console.log("Sending Data:", formData);
-
+  
     try {
+      const storedUser = sessionStorage.getItem("user");
+      const user = storedUser ? JSON.parse(storedUser) : null;
+  
+      if (!user) {
+        throw new Error("User not found in session");
+      }
+  
+      const bookingData = {
+        time_slot: timeSlot.trim(),
+        tour_type: tourType.trim(),
+        location: location.trim(),
+        language: language.trim(),
+        user: user.email,
+        date: date.toISOString().split('T')[0],
+      };
+  
       const response = await fetch("http://localhost:8000/bookings/create/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${user.email}` // Remove this if your backend doesn't use it
+        },
+        body: JSON.stringify(bookingData),
       });
-
+  
       console.log("Response Status:", response.status);
-
       const result = await response.json();
       console.log("API Response:", result);
-
+  
       if (response.ok) {
-        console.log("Redirecting to confirmation page...");
-
-        // Ensure all form data is passed to the confirmation page
         const query = new URLSearchParams({
-          ...formData, // Pass all form data
-          date: formData.date
-            ? formData.date.toISOString().split("T")[0]
-            : "", // Convert date to string
+          ...formData,
+          date: date.toISOString().split("T")[0],
           message: "Booking successful!",
         }).toString();
-
+  
         router.push(`/tourist/booking/confirmation?${query}`);
       } else {
         alert(result.message || "Booking failed, please try again.");
       }
     } catch (error) {
       console.error("Fetch Error:", error);
+      alert("An error occurred during booking. Please try again.");
     }
   };
+  
+  
 
   const handleClosePopup = () => setShowLoginPopup(false);
 
@@ -107,7 +136,7 @@ const TouristBooking = () => {
             label="Select Location"
             value={formData.location}
             onChange={handleChange}
-            options={["Taj Mahal", "Jaipur", "Goa"]}
+            options={["Sasangir Park", "Saputara", "Somnath","Ambaji", "Dwarka"]}
           />
          <DatePicker
           label="Select Date"

@@ -1,0 +1,60 @@
+.my-bookings {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+    &__title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+  
+    &__message {
+      text-align: center;
+      font-size: 1rem;
+      color: #7f8c8d;
+    }
+  
+    &__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+  
+    &__item {
+      background-color: #ffffff;
+      border: 1px solid #ecf0f1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      color: #34495e;
+    }
+  
+    &__label {
+      font-weight: 600;
+    }
+  
+    &__value {
+      font-weight: 400;
+    }
+  }
+  

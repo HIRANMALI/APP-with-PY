@@ -32,9 +32,11 @@ export default function Signup() {
       });
   
       const data = await response.json();
+      console.log("Parsed data:", data);
       if (!response.ok) throw new Error(data.message || "Signup failed");
 
       sessionStorage.setItem("user", JSON.stringify({ name: data.username }));
+      sessionStorage.setItem("userId", data.userId); // Or response.user.id
   
       // Auto-login if backend sets auth cookies
       router.push("/");  // Redirect to homepage
