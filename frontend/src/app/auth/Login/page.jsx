@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import "../../styles/SignUp.scss"; 
+import "../../styles/SignUp.scss";
 
 export default function Login() {
   const router = useRouter();
@@ -92,7 +92,7 @@ export default function Login() {
           <button
             type="button"
             className="signup__link"
-            onClick={() => router.push("/auth/signup")}
+            onClick={() => router.push("/auth/SignUp")}
           >
             Sign Up
           </button>

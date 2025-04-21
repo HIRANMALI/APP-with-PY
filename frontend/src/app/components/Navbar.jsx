@@ -10,7 +10,7 @@ const cinzel = Cinzel_Decorative({ weight: "700", subsets: ["latin"] });
 const kanit = Kanit({ weight: ["300", "400", "500"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["300", "500"], subsets: ["latin"] });
 
-function Navbar() {
+function Navbar({ openChat }) {
   const pathname = usePathname();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -45,10 +45,10 @@ function Navbar() {
       <div className="navbar-auth">
         {!isAuthenticated ? (
           <>
-            <Link href="/auth/Login" className="auth-button kanit-medium"  prefetch>
+            <Link href="/auth/Login" className="auth-button kanit-medium" prefetch>
               Login
             </Link>
-            <Link href="/auth/SignUp" className="auth-button kanit-medium"  prefetch>
+            <Link href="/auth/SignUp" className="auth-button kanit-medium" prefetch>
               Sign Up
             </Link>
             <Link href="/guide" className="secondary_auth-button kanit-medium" prefetch>
@@ -57,13 +57,17 @@ function Navbar() {
           </>
         ) : (
           <div className="navbar__icons">
-            <Link href="/chat" className="navbar__icon-link">
-              <FaCommentDots
-                size={28}
-                className="navbar__icon navbar__icon--chat"
-                style={{ color: "black" }}
-              />
-            </Link>
+            {/* <Link href="/chat" className="navbar__icon-link"> */}
+
+            {isAuthenticated && (
+              <button onClick={() => {
+                console.log("Chat icon clicked");
+                openChat();
+              }} className="navbar__icon-link">
+                <FaCommentDots size={28} style={{ color: "black" }} />
+              </button>
+            )}
+            {/* </Link> */}
 
             <div className="profile-dropdown">
               <FaUserCircle

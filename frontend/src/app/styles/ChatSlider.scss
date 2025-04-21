@@ -1,0 +1,135 @@
+.chat-slider {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    max-width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 50;
+    border-left: 1px solid #e5e7eb;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out forwards;
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffedd5; // orange-100
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .chat-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .chat-close {
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ef4444; // red-500
+    &:hover {
+      color: #dc2626; // red-600
+    }
+  }
+  
+  .chat-messages {
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .chat-message {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    max-width: 80%;
+  
+    &.user {
+      background-color: #bbf7d0; // green-100
+      align-self: flex-end;
+    }
+  
+    &.bot {
+      background-color: #e5e7eb; // gray-200
+      align-self: flex-start;
+      cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #f3f4f6; // gray-100
+    }
+    }
+  }
+  
+  .chat-form {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .chat-input {
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    outline: none;
+  }
+  
+  .chat-send {
+    padding: 0.5rem 1rem;
+    background-color: #f97316; // orange-500
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #ea580c; // orange-600
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .guide-list {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .guide-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f3f4f6; // gray-100
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  
+    &:hover {
+      background-color: #e5e7eb; // gray-200
+    }
+  }
+
+  

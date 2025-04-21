@@ -74,7 +74,9 @@ INSTALLED_APPS = [
     'frontend',
     'tourist',
     'TourGuide',
-    'account'
+    'account',
+    'chat',
+    'channels'
 ]
 
 
@@ -108,6 +110,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'TourGuide.wsgi.application'
+ASGI_APPLICATION = 'TourGuide.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 
 # Database
@@ -118,7 +130,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tourguide',
         'USER': 'django_user',
-        'PASSWORD': 'Prashant04',
+        'PASSWORD': 'Dhruv@1144',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
