@@ -1,10 +1,51 @@
 "use client";
 
+import { useState } from "react";
 import "../styles/Footer.scss";
 
 export default function Footer() {
-    return (
-        <footer className="footer">
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("http://localhost:8000/auth/contact/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert(data.error || "Something went wrong!");
+      }
+    } catch (error) {
+      alert("Failed to send message!");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <footer className="footer">
       <div className="footer__container">
         {/* Navigation Links */}
         <ul className="footer__nav">
@@ -32,15 +73,39 @@ export default function Footer() {
         </ul>
 
         {/* Contact Form */}
-        <form className="footer__form">
+        <form className="footer__form" onSubmit={handleSubmit}>
           <h3 className="footer__form-title">Send Us a Message</h3>
-          <input type="text" className="footer__form-input" placeholder="Your Name" required />
-          <input type="email" className="footer__form-input" placeholder="Your Email" required />
-          <textarea className="footer__form-textarea" placeholder="Your Message" required></textarea>
-          <button type="submit" className="footer__form-button">Send</button>
+          <input
+            type="text"
+            name="name"
+            className="footer__form-input"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            className="footer__form-input"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            className="footer__form-textarea"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" className="footer__form-button" disabled={submitting}>
+            {submitting ? "Sending..." : "Send"}
+          </button>
         </form>
       </div>
     </footer>
-    );
-
+  );
 }

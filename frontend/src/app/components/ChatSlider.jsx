@@ -1,21 +1,17 @@
 'use client';
 import React, { useState } from "react";
 import '@/app/styles/ChatSlider.scss';
-
-const guides = [
-    { id: 1, name: "Ravi (Sasan Gir)" },
-    { id: 2, name: "Kavita (Dwarka)" },
-    { id: 3, name: "Ajay (Ahmedabad)" },
-];
+import guideData from "../data/GuideData";
 
 export default function ChatSlider({ onClose }) {
     const [selectedGuide, setSelectedGuide] = useState(null);
     const [messages, setMessages] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     const handleGuideSelect = (guide) => {
         setSelectedGuide(guide);
         setMessages([
-            { sender: 'guide', text: `Hello! I'm ${guide.name}. How can I help?` }
+            { sender: 'guide', text: `Hello! I'm ${guide.fullName} from ${guide.city}. How can I help?` }
         ]);
     };
 
@@ -29,13 +25,17 @@ export default function ChatSlider({ onClose }) {
         input.value = '';
     };
 
+    const filteredGuides = guideData.filter(guide =>
+        `${guide.fullName} ${guide.city}`.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="chat-slider">
             <div className="chat-header">
                 {selectedGuide ? (
                     <>
                         <button onClick={() => setSelectedGuide(null)} className="chat-close">←</button>
-                        <h2 className="chat-title">{selectedGuide.name}</h2>
+                        <h2 className="chat-title">{selectedGuide.fullName} ({selectedGuide.city})</h2>
                         <button onClick={onClose} className="chat-close">✖</button>
                     </>
                 ) : (
@@ -47,18 +47,31 @@ export default function ChatSlider({ onClose }) {
             </div>
 
             {!selectedGuide ? (
-                <div className="guide-list">
-                    {guides.map((guide) => (
-                        <div
-                            key={guide.id}
-                            className="guide-button"
-                            onClick={() => handleGuideSelect(guide)}
-                        >
-                            {guide.name}
-                        </div>
-                    ))}
-                </div>
+                <div className="guide-list-container">
+                    <input
+                        type="text"
+                        placeholder="Search guides..."
+                        className="guide-search"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
 
+                    <div className="guide-list">
+                        {filteredGuides.length > 0 ? (
+                            filteredGuides.map((guide, index) => (
+                                <div
+                                    key={index}
+                                    className="guide-button"
+                                    onClick={() => handleGuideSelect(guide)}
+                                >
+                                    {guide.fullName} ({guide.city})
+                                </div>
+                            ))
+                        ) : (
+                            <p style={{ padding: "1rem", color: "#888" }}>No guides found.</p>
+                        )}
+                    </div>
+                </div>
             ) : (
                 <>
                     <div className="chat-messages">
