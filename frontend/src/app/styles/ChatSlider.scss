@@ -115,6 +115,20 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    max-height: 700px; // Adjust as needed
+    overflow-y: auto;
+    margin: 0 1rem;
+    padding-right: 4px;
+  }
+  .guide-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .guide-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  .guide-list-container {
+    padding: 1rem;
   }
   
   .guide-button {
@@ -130,6 +144,14 @@
     &:hover {
       background-color: #e5e7eb; // gray-200
     }
+  }
+  .guide-search {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
   }
 
   
