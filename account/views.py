@@ -6,8 +6,7 @@ from django.core.mail import send_mail
 from .models import CustomUser
 from .serializers import SignupSerializer
 from django.conf import settings
-
-
+from django.http import JsonResponse
 
 class SignupView(APIView):
     def post(self, request):
@@ -38,14 +37,21 @@ class LoginView(APIView):
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
+            # ✅ Store session data
+            request.session['userId'] = user.id
+            request.session['email'] = user.email
+            request.session['role'] = user.role
+
             # ✅ Send login success email
             send_mail(
-            subject='Login Notification - Tour Guide',
-            message=f"Hello {user.email},\n\nYou have successfully logged in to Tour Guide!",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[user.email],
-            fail_silently=False,
-    )
+                subject='Login Notification - Tour Guide',
+                message=f"Hello {user.email},\n\nYou have successfully logged in to Tour Guide!",
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[user.email],
+                fail_silently=False,
+            )
+
+            print("SESSION DATA:", request.session.items())
 
             return Response({
                 'email': user.email,
@@ -54,6 +60,7 @@ class LoginView(APIView):
             }, status=status.HTTP_200_OK)
         else:
             return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
 
 
 class LogoutView(APIView):
@@ -81,4 +88,36 @@ class ContactFormView(APIView):
             return Response({"message": "Message sent successfully!"}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": f"Failed to send message: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def register_local_guide(request):
+    if request.method == 'POST':
+        user_id = request.POST.get('userId')
+
+        if not user_id:
+            return JsonResponse({'error': 'User ID missing from request'}, status=401)
+
+        try:
+            user = get_user_model().objects.get(id=user_id)
+        except get_user_model().DoesNotExist:
+            return JsonResponse({'error': 'User not found'}, status=404)
+
+        # Update user info...
+        user.motive = request.POST.get('motive', '')
+        user.profile_picture = request.FILES.get('profilePicture')
+        user.about_me = request.POST.get('aboutMe', '')
+        user.hourly_rate = request.POST.get('hourlyRate') or None
+        user.city = request.POST.get('city', '')
+        user.languages = request.POST.get('languages', '')
+        user.activities = request.POST.get('activities', '')
+
+        user.add_role('local')
+        user.save()
+
+        return JsonResponse({'message': 'Registration successful'}, status=200)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
+
 

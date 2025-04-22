@@ -76,7 +76,8 @@ $text-color: black;
   padding-bottom: 5px;
   font-weight: 600;
   
-  &:hover::after {
+   &:hover::after,
+  &.active::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -84,7 +85,7 @@ $text-color: black;
     background-color: $primary-color;
     bottom: 0;
     left: 0;
-    transition: background-color 1s ease;
+    transition: background-color 0.3s ease;
   }
 }
 

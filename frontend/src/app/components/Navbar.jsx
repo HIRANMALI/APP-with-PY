@@ -35,11 +35,42 @@ function Navbar({ openChat }) {
     <nav className="navbar">
       <div className={`navbar-brand ${cinzel.className}`}>GuidZo</div>
       <div className="navbar-links">
-        <Link href="/" className="nav-link" prefetch>Pro Guide</Link>
-        <Link href="/tourist/local" className="nav-link" prefetch>Local Guide</Link>
-        <Link href="/bookings" className="nav-link" prefetch>My Bookings</Link>
-        <Link href="/benefits" className="nav-link" prefetch>Benefits</Link>
-        <Link href="/about" className="nav-link" prefetch>About Us</Link>
+      <Link
+  href="/"
+  className={`nav-link ${pathname === "/" ? "active" : ""}`}
+  prefetch
+>
+  Pro Guide
+</Link>
+<Link
+  href="/tourist/local"
+  className={`nav-link ${pathname === "/tourist/local" ? "active" : ""}`}
+  prefetch
+>
+  Local Guide
+</Link>
+<Link
+  href="/bookings"
+  className={`nav-link ${pathname === "/bookings" ? "active" : ""}`}
+  prefetch
+>
+  My Bookings
+</Link>
+<Link
+  href="/benefits"
+  className={`nav-link ${pathname === "/benefits" ? "active" : ""}`}
+  prefetch
+>
+  Benefits
+</Link>
+<Link
+  href="/about"
+  className={`nav-link ${pathname === "/about" ? "active" : ""}`}
+  prefetch
+>
+  About Us
+</Link>
+
       </div>
 
       <div className="navbar-auth">
@@ -79,10 +110,10 @@ function Navbar({ openChat }) {
               {dropdownOpen && (
                 <div className="dropdown-menu">
                   <p className="user-name">{user?.name}</p>
-                  <Link href="/guide" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
+                  <Link href="/register/pro" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
                     Sign in as Pro Guide
                   </Link>
-                  <Link href="/tourist/local" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
+                  <Link href="/register/local" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
                     Sign in as Local Guide
                   </Link>
                   <button onClick={handleLogout}>Log Out</button>

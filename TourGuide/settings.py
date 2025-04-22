@@ -43,6 +43,11 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_SAMESITE = 'None'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Store session data in the database
+SESSION_COOKIE_AGE = 7200  # 1 hour expiration for the session
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Expire session when browser closes
+SESSION_SAVE_EVERY_REQUEST = True  
+
 
 from datetime import timedelta
 
@@ -162,6 +167,8 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'account.CustomUser'
+
+APPEND_SLASH = False
 
 
 # Internationalization

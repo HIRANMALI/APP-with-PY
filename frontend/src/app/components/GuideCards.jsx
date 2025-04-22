@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import '../styles/GuideCards.scss';
-import guidesData from '../data/guideData';
+import guidesData from '../data/GuideData';
 
 export default function GuideCards({ searchCity }) {
   // Filter guides based on city (case-insensitive)

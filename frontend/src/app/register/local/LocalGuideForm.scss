@@ -1,0 +1,71 @@
+.guide-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+  
+    &__title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+  
+    &__group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+  
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  
+    &__label {
+      flex: 0 0 200px;
+      margin-right: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+  
+    &__input,
+    &__textarea {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        border-color: #ff5722;
+        outline: none;
+      }
+    }
+  
+    &__textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+  
+    &__submit {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: #ff5722;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: darken(#ff5722, 10%);
+      }
+    }
+  }
+  

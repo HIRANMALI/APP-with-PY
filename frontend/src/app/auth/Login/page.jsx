@@ -19,13 +19,13 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     if (!formData.email || !formData.password) {
       alert("Email and password are required");
       setLoading(false);
       return;
     }
-
+  
     try {
       const response = await fetch("http://127.0.0.1:8000/auth/login/", {
         method: "POST",
@@ -33,23 +33,25 @@ export default function Login() {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify(formData), // Must match what backend expects
+        body: JSON.stringify(formData),
       });
-
+  
       const data = await response.json();
-
+  
       if (!response.ok) throw new Error(data.message || "Login failed");
-
+  
+      // Store userId in sessionStorage
       sessionStorage.setItem("user", JSON.stringify({ email: formData.email }));
-      sessionStorage.setItem("userId", data.userId); // Or response.user.id
-
-      router.push("/");
+      sessionStorage.setItem("userId", data.userId);
+  
+      router.push("/"); // Redirect after successful login
     } catch (error) {
       alert(error.message);
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="signup">

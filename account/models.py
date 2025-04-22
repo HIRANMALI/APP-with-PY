@@ -29,8 +29,17 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    role = models.CharField(max_length=50, default="tourist")  # 👈 default role
+    role = models.CharField(max_length=50, default="tourist")
 
+    motive = models.TextField(blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    about_me = models.TextField(blank=True, null=True)
+    hourly_rate = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
+    city = models.CharField(max_length=100, blank=True, null=True)
+    languages = models.CharField(max_length=255, blank=True, null=True)
+    activities = models.CharField(max_length=255, blank=True, null=True)
+
+    # ✅ Use custom manager here
     objects = CustomUserManager()
 
     USERNAME_FIELD = "email"
@@ -38,3 +47,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    def add_role(self, new_role):
+        roles = self.role.split(",")
+        if new_role not in roles:
+            roles.append(new_role)
+            self.role = ",".join(sorted(set(roles)))
+            self.save()
+
+

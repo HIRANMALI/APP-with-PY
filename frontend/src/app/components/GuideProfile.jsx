@@ -1,8 +1,7 @@
 'use client';
 import React from 'react';
-import guidesData from '../data/guideData'; // ✅ Importing mock data
+import guidesData from '../data/GuideData'; // ✅ Importing mock data
 import '../styles/GuideProfile.scss';
-import Navbar from './Navbar';
 
 const GuideProfile = ({ name }) => {
   // Convert route param to match fullName (like "raj-patel" → "Raj Patel")
@@ -19,7 +18,6 @@ const GuideProfile = ({ name }) => {
 
   return (
     <>
-      <Navbar />
       <div className="guide-profile">
         <div className="guide-profile__header">
           <img
