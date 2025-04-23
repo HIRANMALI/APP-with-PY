@@ -1,0 +1,109 @@
+.dashboard {
+    padding: 2rem;
+    background-color: #fbeee6;
+    min-height: 100vh;
+  
+    .header {
+      margin-bottom: 2rem;
+  
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+  
+      p {
+        font-size: 1.1rem;
+        color: #666;
+      }
+    }
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+  
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #222;
+    }
+  
+    p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      color: #444;
+  
+      strong {
+        font-weight: 600;
+        color: #111;
+      }
+    }
+  }
+  
+  .status {
+    margin-top: 1rem;
+    color: #1f9f3e;
+    font-weight: 600;
+  }
+  
+  .recentBookings {
+    margin-top: 2.5rem;
+    background-color: #fff;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #222;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eee;
+        font-size: 1rem;
+        color: #555;
+  
+        &:last-child {
+          border-bottom: none;
+        }
+  
+        strong {
+          color: #222;
+        }
+  
+        em {
+          font-style: normal;
+          color: #888;
+        }
+      }
+    }
+  }
+  

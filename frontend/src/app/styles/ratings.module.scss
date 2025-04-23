@@ -1,0 +1,211 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+    
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+      color: #666;
+    }
+  }
+  
+  .ratingSummary {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  
+  .averageRating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    
+    .averageNumber {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #333;
+      line-height: 1;
+    }
+    
+    .stars {
+      display: flex;
+      gap: 0.25rem;
+      margin: 0.5rem 0;
+    }
+    
+    .ratingCount {
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .ratingDistribution {
+    flex: 1;
+    
+    .ratingBar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      
+      .starLabel {
+        width: 60px;
+        font-size: 0.9rem;
+        color: #666;
+      }
+      
+      .barContainer {
+        flex: 1;
+        height: 8px;
+        background: #eee;
+        border-radius: 4px;
+        margin: 0 0.5rem;
+        overflow: hidden;
+        
+        .bar {
+          height: 100%;
+          background: #ffc107;
+          border-radius: 4px;
+        }
+      }
+      
+      .count {
+        width: 40px;
+        text-align: right;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    }
+  }
+  
+  .ratingsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .ratingCard {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    
+    .ratingHeader {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      
+      @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    
+    .travelerInfo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .travelerName {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+      
+      .stars {
+        display: flex;
+        gap: 0.1rem;
+      }
+    }
+    
+    .tourInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      
+      @media (max-width: 600px) {
+        align-items: flex-start;
+      }
+      
+      .tourName {
+        font-weight: 600;
+        color: #333;
+      }
+      
+      .date {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    }
+    
+    .review {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      
+      .actionButton {
+        padding: 0.5rem 1rem;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        
+        &:hover {
+          background: #e0e0e0;
+        }
+      }
+    }
+  }
+  
+  .star {
+    color: #ddd;
+    
+    &.filled {
+      color: #ffc107;
+    }
+  }
