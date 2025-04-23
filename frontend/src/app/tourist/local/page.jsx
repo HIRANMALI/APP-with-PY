@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/app/components/Navbar";
+import Navbar from "../../components/Navbar";
 import { useState, useRef, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import "../../styles/LocalGuide.scss";
