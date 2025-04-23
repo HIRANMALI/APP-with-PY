@@ -1,5 +1,6 @@
-// pages/guide-dashboard.tsx
+"use client";
 
+import React, { useState, useEffect } from "react";
 import styles from "@/app/styles/GuideDashboard.module.scss";
 import Head from "next/head";
 import NavbarGuide from "../components/NavbarGuide";
@@ -23,6 +24,22 @@ const GuideDashboard = () => {
         },
     ];
 
+    const [guideName, setGuideName] = useState("");
+
+    useEffect(() => {
+        const userId = sessionStorage.getItem("userId");
+        if (userId) {
+            fetch(`http://localhost:8000/auth/guide-dashboard/${userId}/`)
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.name) {
+                        setGuideName(data.name);
+                    }
+                })
+                .catch((err) => console.error("Failed to fetch guide name:", err));
+        }
+    }, []);
+
     return (
         <>
             <Head>
@@ -30,10 +47,10 @@ const GuideDashboard = () => {
             </Head>
             <NavbarGuide />
             <main className={styles.dashboard}>
-                <header className={styles.header}>
-                    <h2>Welcome back, Ramesh 👋</h2>
-                    <p>Here’s what’s happening with your tours today</p>
-                </header>
+            <header className={styles.header}>
+                <h2>Welcome Guide, {guideName || "Loading..."} 👋</h2>
+                <p>Here’s what’s happening with your tours today</p>
+            </header>
 
                 <section className={styles.cards}>
                     {/* Earnings Overview */}

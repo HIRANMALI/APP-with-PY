@@ -1,4 +1,3 @@
-/* FONT STYLING */
 $primary-color: #ff3c00;
 $secondary-color: #ff5722;
 $text-color: black;
@@ -75,9 +74,10 @@ $text-color: black;
   position: relative;
   padding-bottom: 5px;
   font-weight: 600;
+
   
-   &:hover::after,
-  &.active::after {
+  
+  &:hover::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -85,7 +85,7 @@ $text-color: black;
     background-color: $primary-color;
     bottom: 0;
     left: 0;
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease;
   }
 }
 
@@ -103,7 +103,6 @@ $text-color: black;
     left: 0;
   }
 }
-
 
 /* Auth buttons */
 .auth-button, .secondary_auth-button {
@@ -285,3 +284,4 @@ $text-color: black;
     }
   }
 }
+

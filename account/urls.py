@@ -9,4 +9,5 @@ urlpatterns = [
     # path('check_auth/', views.check_auth, name='check-auth' )
     path('contact/', views.ContactFormView.as_view(), name='contact-form'),
    path("register/local/", views.register_local_guide, name="register_local"),
+   path('guide-dashboard/<int:user_id>/', views.get_local_guide_name, name='get_local_guide_name'),
 ]

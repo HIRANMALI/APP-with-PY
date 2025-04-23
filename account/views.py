@@ -121,3 +121,23 @@ def register_local_guide(request):
     return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
+@csrf_exempt
+def get_local_guide_name(request, user_id):
+    try:
+        user = CustomUser.objects.get(id=user_id)
+        roles = user.role.split(',')
+
+        if 'local' in roles:
+            return JsonResponse({
+                'name': user.name,
+                'role': user.role  # now also sending full role info
+            }, status=200)
+        else:
+            return JsonResponse({
+                'error': 'User is not a local guide',
+                'role': user.role  # still return role for frontend decisions
+            }, status=403)
+
+    except CustomUser.DoesNotExist:
+        return JsonResponse({'error': 'User not found'}, status=404)
+

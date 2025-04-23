@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import "../styles/Navbar.scss";
+import "../styles/NavbarGuide.scss";
 import { Cinzel_Decorative, Kanit, Poppins } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faComments } from "@fortawesome/free-solid-svg-icons";

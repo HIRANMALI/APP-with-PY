@@ -15,6 +15,7 @@ function Navbar({ openChat }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [userRole, setUserRole] = useState("");
 
   useEffect(() => {
     const storedUser = sessionStorage.getItem("user");
@@ -31,34 +32,48 @@ function Navbar({ openChat }) {
     setDropdownOpen(false);
   };
 
+  useEffect(() => {
+    const userId = sessionStorage.getItem("userId");
+    console.log("Fetched userId from sessionStorage:", userId); // DEBUG
+    if (userId) {
+      fetch(`http://localhost:8000/auth/guide-dashboard/${userId}/`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.role) {
+            setUserRole(data.role); // role = "local,tourist"
+          }
+        });
+    }
+  }, []);
+
   return (
     <nav className="navbar">
       <div className={`navbar-brand ${cinzel.className}`}>GuidZo</div>
       <div className="navbar-links">
       <Link
   href="/"
-  className={`nav-link ${pathname === "/" ? "active" : ""}`}
+  className={`nav-link ${pathname === "/" ? "active-link" : ""}`}
   prefetch
 >
   Pro Guide
 </Link>
 <Link
   href="/tourist/local"
-  className={`nav-link ${pathname === "/tourist/local" ? "active" : ""}`}
+  className={`nav-link ${pathname === "/tourist/local" ? "active-link" : ""}`}
   prefetch
 >
   Local Guide
 </Link>
 <Link
   href="/bookings"
-  className={`nav-link ${pathname === "/bookings" ? "active" : ""}`}
+  className={`nav-link ${pathname === "/bookings" ? "active-link" : ""}`}
   prefetch
 >
   My Bookings
 </Link>
 <Link
   href="/benefits"
-  className={`nav-link ${pathname === "/benefits" ? "active" : ""}`}
+  className={`nav-link ${pathname === "/benefits" ? "active-link" : ""}`}
   prefetch
 >
   Benefits
@@ -70,7 +85,6 @@ function Navbar({ openChat }) {
 >
   About Us
 </Link>
-
       </div>
 
       <div className="navbar-auth">
@@ -111,11 +125,30 @@ function Navbar({ openChat }) {
                 <div className="dropdown-menu">
                   <p className="user-name">{user?.name}</p>
                   <Link href="/register/pro" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
-                    Sign in as Pro Guide
+                    Register as Pro Guide
                   </Link>
-                  <Link href="/register/local" onClick={() => setDropdownOpen(false)} className="dropdown-menu__btn">
-                    Sign in as Local Guide
-                  </Link>
+                 {userRole ? (
+                    userRole.includes("local") ? (
+                <Link
+                  href="/guide"
+                  onClick={() => setDropdownOpen(false)}
+                  className="dropdown-menu__btn"
+                >
+                  Switch to Local Guide
+                </Link>
+                ) : (
+                <Link
+                  href="/register/local"
+                  onClick={() => setDropdownOpen(false)}
+                  className="dropdown-menu__btn"
+                >
+                  Register as Local Guide
+                </Link>
+                )
+                ) : (
+                  <p className="dropdown-menu__btn">Checking role...</p>
+                )}
+
                   <button onClick={handleLogout}>Log Out</button>
                 </div>
               )}
